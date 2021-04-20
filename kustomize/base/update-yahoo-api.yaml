@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: iotd
+spec:
+  ports:
+    - port: 3000
+      targetPort: yahoo-api
+  selector:
+    app: update-yahoo-api
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: update-yahoo-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: update-yahoo-api
+  template:
+    metadata:
+      labels:
+        app: update-yahoo-api
+    spec:
+      containers:
+        - name: yahoo-api
+          image: update-yahoo-finance
+          ports:
+            - containerPort: 3000
+              name: yahoo-api
+              
