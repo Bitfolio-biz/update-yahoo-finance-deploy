@@ -4,6 +4,8 @@ resources:
 - update-yahoo-api.yaml
 namespace: influx-apps
 images:
-- name: 
-  newName: bitfolio/update-yahoo-finance
+- newName: bitfolio/update-yahoo-finance
   newTag: v0.0.3
+- name: update-yahoo-finance
+  newName: bitfolio/update-yahoo-finance
+  newTag: main
