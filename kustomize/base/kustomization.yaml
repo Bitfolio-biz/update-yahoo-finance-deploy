@@ -8,4 +8,4 @@ images:
   newTag: v0.0.3
 - name: update-yahoo-finance
   newName: bitfolio/update-yahoo-finance
-  newTag: main
+  newTag: v1.2
